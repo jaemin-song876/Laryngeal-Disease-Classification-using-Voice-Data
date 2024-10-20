@@ -12,16 +12,16 @@ from scipy.signal.windows import hamming
 
 
 def getansifrequencies(fraction, limits=None):
-    """ ANSI s1.11-2004 && IEC 61260-1-2014
-    Array of frequencies and its edges according to the ANSI and IEC standard.
+"""
+ANSI S1.11-2004 & IEC 61260-1-2014 Compliant Frequency Array and Edges.
 
-    :param fraction: Bandwidth 'b'. Examples: 1/3-octave b=3, 1-octave b=1,
-    2/3-octave b = 3/2
-    :param limits: It is a list with the minimum and maximum frequency that
-    the array should have.
-    :returns: Frequency array, lower edge array and upper edge array
-    :rtype: list, list, list
-    """
+Generates an array of center frequencies along with their corresponding lower and upper edges, based on the ANSI and IEC standards.
+
+:param fraction: The bandwidth 'b' of the filter bands. For example, use b=3 for 1/3-octave, b=1 for 1-octave, and b=3/2 for 2/3-octave bands.
+:param limits: A list specifying the minimum and maximum frequencies for the array.
+:returns: A list of center frequencies, a list of lower edge frequencies, and a list of upper edge frequencies.
+:rtype: list, list, list
+"""
     if limits is None:
         limits = [12, 40000]
 
